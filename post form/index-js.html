@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h3>input to test POST method</h3>
+<h4>ADD LANGUAGE</h4>
+<div>
+  <form>
+    <label for="lname">Lang name</label>
+    <input type="text" id="lname" name="langname" class="form-input" placeholder="lang name..">
+
+    <small class="form-alert"></small>
+  
+    <input type="submit" value="Submit" class="submit-btn">
+
+    <div class="result"></div>
+
+  </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+const result = document.querySelector('.result');
+
+const fetchlang = async()=>{
+
+    try{
+
+    const { data } = await axios.get('/api/languages');
+    console.log(data);
+    console.log(data.data);
+    const show_lang = data.data.map((_lang)=>{
+        return `<h5>${_lang.language}</h5>`
+    });
+
+    result.innerHTML = show_lang.join('');
+    }
+    catch(error){
+    result.innerHTML = `<div class="alert-danger"> can't fetch data </div>`;
+    };
+
+};
+
+fetchlang();
+
+const input = document.querySelector(".form-input");
+const btn = document.querySelector('.submit-btn');
+const formAlert = document.querySelector('.form-alert');
+
+
+btn.addEventListener('click', async(e)=>{
+    e.preventDefault();
+    const langValue = input.value;
+    try{
+    const { data } = await axios.post('/api/languages', {name: langValue});
+    const h5 = document.createElement('h5');
+    h5.textContent = data.lang;
+    result.appendChild(h5);
+    }
+    catch(error){
+        formAlert.textContent = error.response.data.msg
+    };
+    input.value = '';
+});
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
+
+

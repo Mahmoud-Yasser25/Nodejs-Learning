@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Js Learning</title>
+    
+
+    <style>
+
+        .styleClass{
+            background: black;
+            color: white;
+        }
+        .styleClass2{
+            background: blue;
+            color: yellowgreen;
+        }
+        .container6{
+            width: 150px;
+            background: crimson;
+            color: white;
+            
+        }
+        .container6 p:hover {
+            background: black;
+            cursor: pointer;
+        }
+        #btnOpen{
+            background: crimson;
+            color: white;
+        }
+        #btnClose{
+            background: crimson;
+            color: white;
+        }
+        #btnOpen:hover{
+            background: black;
+            cursor: pointer;
+        }
+        #btnClose:hover{
+            background: black;
+            cursor: pointer;
+        }
+        .paragraphs{
+            padding: 5px;
+            
+        }
+        .hide{
+            display: none;
+        }
+        .photos img{
+            height: 200px;
+            width: 150px;
+            border: 2px solid white;
+        }
+        .photos img:hover{
+            cursor: pointer;
+            border: 2px solid green;
+        }
+        .photoMiddle img{
+            height: 550px;
+            width: 500px;
+            border: 2px solid white;
+        }
+        #scrolling{
+            background: #fa0;
+            border: none;
+            height: 40px;
+            width: 40px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+        }
+        .active{
+            background: purple;
+        }
+    </style>
+
+
+</head>
+
+
+
+
+<body>
+<h1 id="head">hello world</h1>
+<h1 id="head2">hello world</h1>
+<h2 class="myh2">hello world2</h2>
+<h2 class="myh2">hello world2</h2>
+<h2 class="myh2">hello world2</h2>
+<h2 class="myh2">hello world2</h2>
+<h3>hello world</h3>
+<h3>hello world</h3>
+<h3>hello world</h3>
+<h4>hello world</h4>
+<img src="man.jpg" alt="">
+<img src="man2.jpeg" alt="">
+<img id="img3" class="myimgs" src="man.jpg">
+<a href="https://www.youtube.com">youtube</a>
+<a href="https://www.google.com">google</a>
+<a href="https://www.facebook.com">facebook</a>
+<form action="">
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+</form>
+<form action="">
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+</form>
+<div id="container">
+    <h3>this is a test</h3>
+
+</div>
+<div id="container2">
+    <h3>this is a test2</h3>
+
+</div>
+<div id="container3">
+    <h3>this is a test3</h3>
+
+</div>
+<div id="container4">
+    <h3>this is a test4</h3>
+
+</div>
+<div id="container5">
+    <h3>this is a test5</h3>
+
+</div>
+<div>
+    <p>first</p>
+    <!--comment-->
+    'hello up'
+    <p id="par">second</p>
+    'hello down'
+    <p>third</p>
+    
+
+</div>
+<div id="div1">
+
+    
+</div>
+<div id="div2">
+   
+
+</div>
+<div id="div3">
+    
+    
+   
+</div>
+<!-- this refers to the element button as the element is an object -->
+<button onclick="this.style.background = 'red'">click</button>
+<button onclick="console.log('1st way to make an event is by html')">click for event by html</button>
+<button id="btn">click for event by onevent</button>
+<button id="btn2">click for event by addEventListener</button>
+<button id="btn3">click for 1st difference onevent/addEventListener</button>
+<button id="btn4">click for 1st difference onevent/addEventListener</button>
+<button id="btn5">button for onclick</button>
+<button id="btn6">button for mouseup</button>
+<button id="btn7">button for mousedown</button>
+<button id="btn8">button for mouseover</button>
+<button id="btn9">button for mouseout</button>
+<button id="btn10">button for mousemove</button>
+<input type="text" name="" id="inp1">
+<input type="text" name="" id="inp2">
+<input type="number" placeholder="USD" id="dollar">
+<input type="number" placeholder="EGP" id="pound">
+<button id="afterBtn">after</button>
+<button id="beforeBtn">before</button>
+<button id="appendBtn">append</button>
+<p id="par2">paragraph to test after-before-append</p>
+<div id="cont">
+
+
+</div>
+<h4 id="h5">add-remove class</h4>
+<h4 id="h6">toggle class</h4>
+<button id="btnOpen" class="hide">open</button>
+<button id="btnClose">close</button>
+<div class="container6">
+
+    <p class="paragraphs">Home</p>
+    <p class="paragraphs">Courses</p>
+    <p class="paragraphs">News</p>
+    <p class="paragraphs">Quizzes</p>
+    <p class="paragraphs">Blogs</p>
+    <p class="paragraphs">Chat</p>
+
+</div>
+<input type="text" placeholder="name" id="inp3">
+<button id="clbtn">click</button>
+
+<div class="gallery">
+
+
+<div class="photos">
+
+<img src="1.jpg" id="image1" alt="man">
+<img src="2.jpg" id="image2" alt="man">
+<img src="3.jpg" id="image3" alt="man">
+<img src="4.jpg" id="image4" alt="man">
+
+</div>
+
+
+<div class ="photoMiddle">
+
+    <img src="1.jpg" id= "mainImage" alt="man in red">
+
+
+</div>
+
+<div class="photos">
+
+    <img src="1.jpg" id="image5" alt="man">
+    <img src="2.jpg" id="image6" alt="man">
+    <img src="3.jpg" id="image7" alt="man">
+    <img src="4.jpg" id="image8" alt="man">
+    
+    
+    </div>
+
+
+</div>
+
+
+<button id="scrolling">^</button>
+<button id="reload">reload</button>
+<input type="text" id="inp4">
+<button id="location.assign">location.assign</button>
+<button id="location.replace">location.replace</button>
+<input type="text" placeholder="txt" id="txt1">
+<ul>
+    <li class="active">List one</li>
+    <li>List two</li>
+    <li>List three</li>
+</ul>
+<!--code to connect js file to html file-->
+<script src="main.js">    </script>
+
+
+
+
+
+
+</body>
+
+</html>
